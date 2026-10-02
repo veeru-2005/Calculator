@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A modern, responsive calculator built with HTML, CSS, and Vanilla JavaScript.">
+    <title>Smart Calculator</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="app-header">
+            <div class="header-content">
+                <h1>Smart Calculator</h1>
+                <p>Simple &bull; Fast &bull; Accurate</p>
+            </div>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark/light mode">
+                <span class="icon-sun">☀️</span>
+                <span class="icon-moon">🌙</span>
+            </button>
+        </header>
+
+        <main class="main-content">
+            <div class="calculator-card">
+                <div class="display">
+                    <div class="previous-operand" id="previous-operand"></div>
+                    <div class="current-operand" id="current-operand">0</div>
+                </div>
+                
+                <div class="keypad">
+                    <button class="btn btn-action" data-action="clear" aria-label="All Clear">AC</button>
+                    <button class="btn btn-action" data-action="sign" aria-label="Toggle Sign">±</button>
+                    <button class="btn btn-action" data-action="percent" aria-label="Percentage">%</button>
+                    <button class="btn btn-operator" data-operator="÷" aria-label="Divide">÷</button>
+
+                    <button class="btn btn-number" data-number="7">7</button>
+                    <button class="btn btn-number" data-number="8">8</button>
+                    <button class="btn btn-number" data-number="9">9</button>
+                    <button class="btn btn-operator" data-operator="×" aria-label="Multiply">×</button>
+
+                    <button class="btn btn-number" data-number="4">4</button>
+                    <button class="btn btn-number" data-number="5">5</button>
+                    <button class="btn btn-number" data-number="6">6</button>
+                    <button class="btn btn-operator" data-operator="−" aria-label="Subtract">−</button>
+
+                    <button class="btn btn-number" data-number="1">1</button>
+                    <button class="btn btn-number" data-number="2">2</button>
+                    <button class="btn btn-number" data-number="3">3</button>
+                    <button class="btn btn-operator" data-operator="+" aria-label="Add">+</button>
+
+                    <button class="btn btn-number btn-zero" data-number="0">0</button>
+                    <button class="btn btn-number" data-number="." aria-label="Decimal">.</button>
+                    <button class="btn btn-action" data-action="delete" aria-label="Delete">⌫</button>
+                    <button class="btn btn-equals" data-action="equals" aria-label="Equals">=</button>
+                </div>
+            </div>
+
+            <aside class="history-panel">
+                <div class="history-header">
+                    <h2>History</h2>
+                    <button id="clear-history" class="clear-history-btn" aria-label="Clear History">Clear</button>
+                </div>
+                <div id="history-list" class="history-list">
+                    <!-- History items will be injected here by JS -->
+                    <div class="empty-history">No history yet</div>
+                </div>
+            </aside>
+        </main>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
